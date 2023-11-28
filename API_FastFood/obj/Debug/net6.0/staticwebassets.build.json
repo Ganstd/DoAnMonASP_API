@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "LESkUgM1eFPS4zJqDNQpZLRdDPR2fruwJtgamHMFIfA=",
+  "Source": "API_FastFood",
+  "BasePath": "_content/API_FastFood",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "API_FastFood\\wwwroot",
+      "Source": "API_FastFood",
+      "ContentRoot": "C:\\Users\\ab\\Desktop\\DoAnMonASP_API\\API_FastFood\\wwwroot\\",
+      "BasePath": "_content/API_FastFood",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

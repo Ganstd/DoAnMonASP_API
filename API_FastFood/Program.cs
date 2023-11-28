@@ -5,17 +5,20 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using API_FastFood.Models;
+using API_FastFood.Data;
 
 
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<API_FastFoodContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("API_FastFoodContext") ?? throw new InvalidOperationException("Connection string 'API_FastFoodContext' not found.")));
 
 // Add services to the container
 
 // Config cho Identity
-//builder.Services.AddIdentity<User, IdentityRole>()
-//                .AddEntityFrameworkStores<API_ServerContext>()
-//                .AddDefaultTokenProviders();
+builder.Services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<API_FastFoodContext>()
+                .AddDefaultTokenProviders();
 // Config cho Authentication
 builder.Services.AddAuthentication(options =>
 {
