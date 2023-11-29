@@ -10,7 +10,7 @@ function App() {
       <CustomNavbar />
       
       <Slideshow />
-      <ProductList />
+
       <Footer />
     </Router>
   );
