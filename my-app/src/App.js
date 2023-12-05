@@ -2,6 +2,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Views/Home/Home';
 import Login from './Views/User/Login';
 import LoginAdmin from './Views/Admin/LoginAdmin';
+import ProductList from './Views/Admin/Product/ProductList';
+import AccountList from './Views/Admin/Account/AccountList';
+import AccountAdd from './Views/Admin/Account/AccountAdd';
+import AccountEdit from './Views/Admin/Account/AccountEdit';
+
 
 
 const App = () => {
@@ -20,19 +25,14 @@ const App = () => {
 
           <Route path="/admin" >
             <Route path="login" element={<LoginAdmin />} />
-            {/*  
-            <Route path="accounts">
-              <Route index element={<AccountList />} />
-              <Route path="details/:id" element={<AccountDetail />} />
-              <Route path="add" element={<AccountAdd />} />
-              <Route path="edit/:id" element={<AccountEdit />} />
-            </Route>  */}
-            {/*  <Route path="products">
-              <Route index element={<ProductList />} />
-              <Route path="details/:id" element={<AccountDetail />} />
-              <Route path="add" element={<AccountAdd />} />
-              <Route path="edit/:id" element={<AccountEdit />} />
-            </Route>  */}
+            <Route path="products" element={<ProductList />} />
+
+            <Route path="accounts" element={<AccountList />} />
+            {/* <Route path="details/:id" element={<AccountDetail />} /> */}
+            <Route path="accounts/add" element={<AccountAdd />} />
+            <Route path="accounts/edit/:id" element={<AccountEdit />} />
+
+
           </Route>
 
         </Routes>

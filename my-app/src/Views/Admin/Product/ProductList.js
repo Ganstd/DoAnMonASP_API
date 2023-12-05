@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom';
 const ProductList = () => {
   const [products, setProducts] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     axios.get('https://dummyjson.com/products')
-        .then(res=>setProducts(res.data.products))
-},[])
+      .then(res => setProducts(res.data.products))
+  }, [])
 
   return (
     <Container>
@@ -18,12 +18,12 @@ const ProductList = () => {
         {products.map((product, index) => (
           <Col key={index} md={3}>
             <Card style={{ margin: '10px' }}>
-                <Link to={`/products/${product.id}`}>   
+              <Link to={`/admin/products/${product.id}`}>
                 <Card.Img variant="top" src={product.images} />
-                </Link>
+              </Link>
               <Card.Body>
-                <Link to={`/products/${product.id}`}>
-                <Card.Title>{product.title}</Card.Title>
+                <Link to={`/admin/products/${product.id}`}>
+                  <Card.Title>{product.title}</Card.Title>
                 </Link>
                 <Card.Text>{product.description}</Card.Text>
                 <Card.Text>Price: ${product.price}</Card.Text>
