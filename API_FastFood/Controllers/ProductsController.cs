@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API_FastFood.Data;
 using API_FastFood.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace API_FastFood.Controllers
 {
@@ -23,6 +24,7 @@ namespace API_FastFood.Controllers
 
         // GET: api/Products
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<Product>>> GetProduct()
         {
             return await _context.Products.ToListAsync();

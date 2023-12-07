@@ -1,6 +1,5 @@
 C:\Users\ab\Desktop\DoAnMonASP_API\API_FastFood\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\ab\Desktop\DoAnMonASP_API\API_FastFood\bin\Debug\net6.0\appsettings.json
-C:\Users\ab\Desktop\DoAnMonASP_API\API_FastFood\bin\Debug\net6.0\API_FastFood.staticwebassets.runtime.json
 C:\Users\ab\Desktop\DoAnMonASP_API\API_FastFood\bin\Debug\net6.0\API_FastFood.exe
 C:\Users\ab\Desktop\DoAnMonASP_API\API_FastFood\bin\Debug\net6.0\API_FastFood.deps.json
 C:\Users\ab\Desktop\DoAnMonASP_API\API_FastFood\bin\Debug\net6.0\API_FastFood.runtimeconfig.json

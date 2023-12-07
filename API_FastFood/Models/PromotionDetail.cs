@@ -17,16 +17,12 @@ namespace API_FastFood.Models
         public int PromotionId { get; set; }
         // Reference navigation property cho khóa ngoại đến Promotion
         public Promotion Promotion { get; set; }
-        public int? ProductId { get; set; }
+        public int ProductId { get; set; }
 
         // Reference navigation property cho khóa ngoại đến Product
         public Product Product { get; set; }
 
-        public int? ComboId { get; set; }
-
-        // Reference navigation property cho khóa ngoại đến Combo
-        public Combo Combo { get; set; }
-        public decimal? Discount { get; set; }
+        public decimal Discount { get; set; }
 
     }
 }
