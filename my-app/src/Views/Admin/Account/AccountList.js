@@ -27,12 +27,12 @@ const AccountList = () => {
     const handleCloseDelete = () => setShowDelete(false);
 
     useEffect(() => {
-        axios.get(`https://localhost:7248/api/Accounts`)
+        axios.get(`https://localhost:7104/api/Users`)
             .then(res => setAccounts(res.data));
     }, []);
 
     const handleDelete = () => {
-        axios.delete(`https://localhost:7248/api/Accounts/${selectedAccount.id}`);
+        axios.delete(`https://localhost:7104/api/Users/${selectedAccount.id}`);
         let list = accounts;
         list.splice(accounts.findIndex(a => a.id == selectedAccount.id), 1);
         setAccounts(list);
@@ -49,7 +49,6 @@ const AccountList = () => {
                 <thead className="table-dark">
                     <tr>
                         <th>STT</th>
-                        <th>Ảnh đại diện</th>
                         <th>Tên đăng nhập</th>
                         <th>Email</th>
                         <th>Họ tên</th>
@@ -61,9 +60,11 @@ const AccountList = () => {
                         accounts.map(item =>
                             <tr className="align-middle">
                                 <td>{i++}</td>
+                                {/*
                                 <td>
                                     <img src={`https://localhost:7248/images/avatar/${item.avatar}`} style={{ width: "50px" }} />
                                 </td>
+                                 */}
                                 <td>{item.username}</td>
                                 <td>{item.email}</td>
                                 <td>{item.fullName}</td>

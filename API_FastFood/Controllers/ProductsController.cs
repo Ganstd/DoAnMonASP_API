@@ -24,7 +24,7 @@ namespace API_FastFood.Controllers
 
         // GET: api/Products
         [HttpGet]
-        [Authorize]
+
         public async Task<ActionResult<IEnumerable<Product>>> GetProduct()
         {
             return await _context.Products.ToListAsync();

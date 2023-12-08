@@ -29,14 +29,17 @@ namespace EshopIdentity.Controllers
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             var users = await _userManager.Users.ToListAsync();
-            List <User> list = new List<User>();
+            List <UserViewModel> list = new List<UserViewModel>();
             foreach (var user in users)
             {
-                list.Add(new User
+                list.Add(new UserViewModel
                 {
-                    UserName = user.UserName,
+                    Id = user.Id,
+                    FullName = user.FullName,
+                    Username = user.UserName,
                     Email = user.Email,
-
+                    Birthday = user.Birthday,
+                    
                 });
             }
            return Ok(list);
