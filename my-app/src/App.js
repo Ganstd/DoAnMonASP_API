@@ -6,6 +6,7 @@ import ProductList from './Views/Admin/Product/ProductList';
 import AccountList from './Views/Admin/Account/AccountList';
 import AccountAdd from './Views/Admin/Account/AccountAdd';
 import AccountEdit from './Views/Admin/Account/AccountEdit';
+import Cart from './Views/User/Cart';
 
 
 
@@ -20,6 +21,7 @@ const App = () => {
 
           <Route path="/user" >
             <Route path="login" element={<Login />} />
+            <Route path="Cart" element={<Cart />} />
 
           </Route>
 

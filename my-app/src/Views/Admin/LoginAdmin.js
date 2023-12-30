@@ -22,7 +22,10 @@ const LoginAdmin = () => {
         <>
 
             <div className="container">
-                <h3>Đăng nhập</h3>
+                <div class="row justify-content-center">
+                    <h3>Đăng nhập</h3>
+                </div>
+                <div class="row justify-content-center">
                 <Form className="col-md-3">
                     <Form.Group className="mb-3">
                         <Form.Label>Tên đăng nhập:</Form.Label>
@@ -32,15 +35,15 @@ const LoginAdmin = () => {
                         <Form.Label>Mật khẩu:</Form.Label>
                         <Form.Control type="password" name="password" placeholder="Password" onChange={handleChange} />
                     </Form.Group>
-
-                    <Button type="submit" variant="success" onClick={handleSubmit}>
-                        <FontAwesomeIcon icon={faRightToBracket} size="xl" style={{ color: "#e0e3d4", }} /> Đăng nhập
-                    </Button>
+                    <div class="row justify-content-center">
+                        <Button type="submit" variant="success" onClick={handleSubmit}>
+                            <FontAwesomeIcon icon={faRightToBracket} size="xl" style={{ color: "#e0e3d4", }} /> Đăng nhập
+                        </Button>
+                    </div>
                 </Form>
-
+                </div>
             </div>
         </>
     );
 }
-
 export default LoginAdmin;
