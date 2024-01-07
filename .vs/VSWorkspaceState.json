@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\API_FastFood"
+    "\\API_FastFood",
+    "\\API_FastFood\\Controllers",
+    "\\API_FastFood\\Models"
   ],
-  "SelectedNode": "\\API_FastFood\\API_FastFood.sln",
+  "SelectedNode": "\\API_FastFood\\Controllers",
   "PreviewInSolutionExplorer": false
 }

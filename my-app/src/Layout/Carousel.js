@@ -1,21 +1,29 @@
 import Carousel from 'react-bootstrap/Carousel';
-import React from 'react';
+import React, { useState } from 'react';
 
 const Slideshow = () => {
   return (
-    <Carousel style={{width:"90%", margin:"auto"}}>
+    <Carousel style={{width:"90%", margin:"auto"}} controls={false} indicators={false} interval={3000}>
       <Carousel.Item >
-        <img src= "/assets/img/food/16.jpg" alt= "Image 1" style={{width:"100%"}}></img>
-        <Carousel.Caption>
-          <h3 style={{color:"black"}}>First slide label</h3>
-          <p style={{color:"black"}}>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <img src="/assets/img/food/16.jpg" alt= "Image 1" style={{width:"100%",transition: "2s"}}></img>
+        <Carousel.Caption style={{ height:"200px"}}>
+          <h3 style={{color:"black"}}>Bento gà nướng mật ong</h3>
+          <p style={{color:"black"}}>Gà nướng mật ong, cơm, rong biển, các món ăn kèm.</p>
+        </Carousel.Caption>
+      </Carousel.Item >
+      <Carousel.Item >
+        <img src="/assets/img/food/18.jpg" alt= "Image 2" style={{width:"100%",transition: "2s"}}></img>
+        <Carousel.Caption  style={{ height:"200px"}}>
+          <h3 style={{color:"black"}}>Bento gà nướng mật ong cá hồi</h3>
+          <p style={{color:"black"}}>Gà nướng mật ong, cá hồi, cơm, rong biển, các món ăn kèm.</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
-        <img src= "/assets/img/food/18.jpg" alt= "Image 2" style={{width:"100%"}}></img>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img src= "/assets/img/food/21.jpg" alt= "Image 2" style={{width:"100%"}}></img>
+      <Carousel.Item >
+        <img src="/assets/img/food/19.jpg" alt= "Image 2" style={{width:"100%",transition: "2s"}}></img>
+        <Carousel.Caption  style={{ height:"200px"}}>
+          <h3 style={{color:"black"}}>Bento trứng cá ngáo</h3>
+          <p style={{color:"black"}}>Trứng cá ngáo, 1/2 trứng gà, cơm, rong biển, các món ăn kèm</p>
+        </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
   );

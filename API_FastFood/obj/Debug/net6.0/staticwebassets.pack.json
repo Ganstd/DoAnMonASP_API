@@ -1,0 +1,433 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\accompanying\\k1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\accompanying\\k1.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\accompanying\\k10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\accompanying\\k10.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\accompanying\\k11.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\accompanying\\k11.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\accompanying\\k12.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\accompanying\\k12.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\accompanying\\k13.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\accompanying\\k13.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\accompanying\\k14.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\accompanying\\k14.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\accompanying\\k15.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\accompanying\\k15.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\accompanying\\k16.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\accompanying\\k16.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\accompanying\\k17.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\accompanying\\k17.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\accompanying\\k2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\accompanying\\k2.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\accompanying\\k3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\accompanying\\k3.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\accompanying\\k4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\accompanying\\k4.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\accompanying\\k5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\accompanying\\k5.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\accompanying\\k6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\accompanying\\k6.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\accompanying\\k7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\accompanying\\k7.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\accompanying\\k8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\accompanying\\k8.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\accompanying\\k9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\accompanying\\k9.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\1.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\10.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\11.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\11.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\12.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\12.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\13.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\13.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\14.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\14.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\15.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\15.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\16.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\16.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\17.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\17.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\18.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\18.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\19.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\19.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\2.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\20.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\20.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\21.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\21.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\22.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\22.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\23.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\23.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\24.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\24.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\25.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\25.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\26.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\26.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\27.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\27.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\28.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\28.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\29.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\29.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\3.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\30.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\30.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\31.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\31.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\32.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\32.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\33.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\33.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\34.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\34.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\35.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\35.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\36.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\36.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\37.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\37.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\38.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\38.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\39.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\39.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\4.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\40.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\40.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\5.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\6.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\7.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\8.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\food\\9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\food\\9.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\logo\\l1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\l1.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\logo\\l10.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\l10.png"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\logo\\l2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\l2.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\logo\\l3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\l3.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\logo\\l4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\l4.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\logo\\l5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\l5.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\logo\\l6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\l6.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\logo\\l7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\l7.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\logo\\l8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\l8.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\logo\\l9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\l9.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\logo\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\logo.png"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\relevant images\\0102 .mp4",
+      "PackagePath": "staticwebassets\\assets\\img\\relevant images\\0102 .mp4"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\relevant images\\nh1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\relevant images\\nh1.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\relevant images\\nh2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\relevant images\\nh2.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\relevant images\\nh3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\relevant images\\nh3.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\relevant images\\nh4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\relevant images\\nh4.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\relevant images\\nh5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\relevant images\\nh5.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\relevant images\\nh6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\relevant images\\nh6.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\relevant images\\nh7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\relevant images\\nh7.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\relevant images\\pexels_videos_1111420 (1080p).mp4",
+      "PackagePath": "staticwebassets\\assets\\img\\relevant images\\pexels_videos_1111420 (1080p).mp4"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\relevant images\\video (2160p).mp4",
+      "PackagePath": "staticwebassets\\assets\\img\\relevant images\\video (2160p).mp4"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n1.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n10.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n11.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n11.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n12.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n12.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n13.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n13.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n14.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n14.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n15.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n15.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n16.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n16.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n17.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n17.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n18.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n18.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n19.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n19.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n2.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n20.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n20.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n21.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n21.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n22.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n22.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n23.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n23.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n24.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n24.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n25.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n25.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n3.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n4.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n5.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n6.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n7.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n8.jpg"
+    },
+    {
+      "Id": "D:\\hk6\\DoAnMonASP_API\\API_FastFood\\wwwroot\\assets\\img\\water\\n9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\water\\n9.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.API_FastFood.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.API_FastFood.props",
+      "PackagePath": "build\\API_FastFood.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.API_FastFood.props",
+      "PackagePath": "buildMultiTargeting\\API_FastFood.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.API_FastFood.props",
+      "PackagePath": "buildTransitive\\API_FastFood.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

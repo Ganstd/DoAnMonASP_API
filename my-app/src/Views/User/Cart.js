@@ -1,149 +1,93 @@
-import React from 'react';
-import { faCheck, faEdit, faPlus, faTimes, faTrash, faUser } from "@fortawesome/free-solid-svg-icons";
+import React, { useCallback,useRef,useState, useEffect } from 'react';
+import {  faMinus, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { Button, Col, Modal, Row, Table } from "react-bootstrap";
-import { Link } from "react-router-dom";
-
+import {  Table } from "react-bootstrap";
+import CustomNavbar from "../../Layout/Navbar";
+import Footer from "../../Layout/Footer";
 
 
 const Cart = () => {
-    const [accounts, setAccounts] = useState([]);
+    // sử lý truy vấn giỏ hàng
+    const [products, setProducts] = useState([]);
     var i = 1;
+    useEffect(() => {
+        axios.get(`https://localhost:7104/api/Products`)
+            .then(res => setProducts(res.data));
+    }, []);
+    // sử lý tăng giảm số lượng
+    const [quantity, setQuantity] = useState(1);
 
-    // Xử lý Modal thông tin tài khoản
-    const [show, setShow] = useState(false);
-    const [selectedAccount, setSelectedAccount] = useState({});
-    const handleShow = (id) => {
-        setSelectedAccount(accounts.find(a => a.id == id));
-        setShow(true);
-    }
-    const handleClose = () => setShow(false);
-
-    // Xử lý Modal xóa tài khoản
-    const [showDelete, setShowDelete] = useState(false);
-    const handleShowDelete = (id) => {
-        setSelectedAccount(accounts.find(a => a.id == id));
-        setShowDelete(true);
-    }
-    const handleCloseDelete = () => setShowDelete(false);
+    const handleIncreaseButton = () => {
+      setQuantity(quantity + 1);
+    };
+    
+    const handleDecreaseButton = () => {
+        if (quantity >= 1) {
+            setQuantity(quantity - 1);
+          }
+    };
+    // sự liện iuput tất cả sản phẩm 
+    
+    const theadInput = useRef();
+    const tbodyInput = useRef();
 
     useEffect(() => {
-        axios.get(`https://localhost:7104/api/Users`)
-            .then(res => setAccounts(res.data));
+    // Lắng nghe sự kiện click của input ở thead
+    theadInput.current.addEventListener("input", () => {
+        // Giả lập sự kiện click của input ở tbody
+        tbodyInput.current.click();
+    });
     }, []);
-
-    const handleDelete = () => {
-        axios.delete(`https://localhost:7104/api/Users/${selectedAccount.id}`);
-        let list = accounts;
-        list.splice(accounts.findIndex(a => a.id == selectedAccount.id), 1);
-        setAccounts(list);
-        setShowDelete(false);
-    }
 
     return (
         <>
-            
+            <CustomNavbar />
             <Table>
                 <thead style={{marginTop:"10px",backgroundColor: "aliceblue"}}>
                     <tr >
-                        <th style={{width:"10%"}}><input type="checkbox" style={{margin:"auto"}}></input></th>
-                        <th style={{width:"20%", textAlign:"center"}}>Hình ảnh</th>
-                        <th style={{width:"20%",textAlign:"center"}}>Sản Phẩm</th>
-                        <th style={{textAlign:"center"}}>Đơn giá</th>
-                        <th style={{textAlign:"center"}}>Số Lượng</th>
-                        <th style={{textAlign:"center"}}>Số tiền</th>
-                        <th style={{textAlign:"center"}}>Chức năng</th>
+                        <th style={{width:"10%",textAlign:"center",verticalAlign: "middle"}}><input type="checkbox"  ref={theadInput} style={{margin:"auto"}}></input></th>
+                        <th style={{width:"20%", textAlign:"center",verticalAlign: "middle"}}>Hình ảnh</th>
+                        <th style={{width:"15%",textAlign:"center",verticalAlign: "middle"}}>Sản Phẩm</th>
+                        <th style={{width:"15%",textAlign:"center",verticalAlign: "middle"}}>Đơn giá</th>
+                        <th style={{width:"15%",textAlign:"center",verticalAlign: "middle"}}>Số Lượng</th>
+                        <th style={{width:"15%",textAlign:"center",verticalAlign: "middle"}}>Số tiền</th>
+                        <th style={{width:"10%",textAlign:"center",verticalAlign: "middle"}}>Chức năng</th>
                         
                     </tr>
                 </thead>
                 <tbody>
-                    {
-                        accounts.map(item =>
+                {
+                        products.map(item =>
                             <tr className="align-middle">
-                                <td>{i++}</td>
-                                {/*
-                                <td>
-                                    <img src={`https://localhost:7248/images/avatar/${item.avatar}`} style={{ width: "50px" }} />
+                                 <td style={{textAlign:"center",verticalAlign: "middle"}}><input type="checkbox"  ref={tbodyInput}  style={{margin:"auto"}}></input></td>
+                                {
+                                <td style={{textAlign:"center",verticalAlign: "middle"}}>{item.productTypeId ==2 ?(<img src={`/assets/img/food/${item.image}`} style={{ width: "100%" }}/>):(item.productTypeId ==3 ?(<img src={`/assets/img/accompanying/${item.image}`} style={{ width: "100%" }}/>):(<img src={`/assets/img/water/${item.image}`} style={{ width: "100%" }}/>))}
+                                    
+                                        
+                                       
+                                      
                                 </td>
-                                 */}
-                                <td>{item.username}</td>
-                                <td>{item.email}</td>
-                                <td>{item.fullName}</td>
-                                <td>
-                                    <Button variant="info" style={{ marginRight: "5px" }} onClick={() => handleShow(item.id)}>
-                                        <FontAwesomeIcon icon={faUser} />
-                                    </Button>
-                                    <Link to={`/admin/accounts/edit/${item.id}`} className="btn btn-warning" style={{ marginRight: "5px" }}>
-                                        <FontAwesomeIcon icon={faEdit} />
-                                    </Link>
-                                    <Button variant="danger" onClick={() => handleShowDelete(item.id)}>
-                                        <FontAwesomeIcon icon={faTrash} />
-                                    </Button>
+                                 }
+                                <td style={{textAlign:"center",verticalAlign: "middle"}}>{item.name}</td>
+                                <td style={{textAlign:"center",verticalAlign: "middle"}}>{item.price}.000 VND</td>
+                                <td style={{textAlign:"center",verticalAlign: "middle"}}> 
+                                    <div>
+                                        <button onClick={handleDecreaseButton} style={{border:"none",backgroundColor:"transparent"}}><FontAwesomeIcon icon={faMinus} /></button>
+                                        <span style={{margin:"0 10px"}}>{quantity}</span>
+                                        <button onClick={handleIncreaseButton} style={{border:"none",backgroundColor:"transparent"}}><FontAwesomeIcon icon={faPlus} /></button>
+                                    </div>
                                 </td>
+                                <td style={{textAlign:"center",verticalAlign: "middle"}}>{item.price * quantity}.000 VND</td>
+                                <td style={{textAlign:"center",verticalAlign: "middle"}}><button ><FontAwesomeIcon icon={faTrash} /></button></td>
                             </tr>
                         )
                     }
                 </tbody>
             </Table>
 
-            <Modal show={show} size="lg" onHide={handleClose} centered>
-                <Modal.Header closeButton>
-                    <Modal.Title>Thông tin tài khoản</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <Row>
-                        <Col md={4}>
-                            <img src={`https://localhost:7248/images/avatar/${selectedAccount.avatar}`} style={{ width: "100%" }} />
-                        </Col>
-                        <Col md={4}>
-                            <dl>
-                                <dt>Tên đăng nhập:</dt>
-                                <dd>{selectedAccount.username}</dd>
-
-                                <dt>Email:</dt>
-                                <dd>{selectedAccount.email}</dd>
-
-                                <dt>SĐT:</dt>
-                                <dd>{selectedAccount.phone}</dd>
-                            </dl>
-                        </Col>
-                        <Col md={4}>
-                            <dl>
-                                <dt>Địa chỉ:</dt>
-                                <dd>{selectedAccount.address}</dd>
-
-                                <dt>Họ tên:</dt>
-                                <dd>{selectedAccount.fullName}</dd>
-
-                                <dt>Loại tài khoản:</dt>
-                                <dd>{selectedAccount.isAdmin ? "Quản trị viên" : "Thành viên"}</dd>
-                            </dl>
-                        </Col>
-                    </Row>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                </Modal.Footer>
-            </Modal>
-
-            <Modal show={showDelete} onHide={handleCloseDelete} centered>
-                <Modal.Header closeButton>
-                    <Modal.Title>Xác nhận xóa</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>Bạn có chắc muốn xóa tài khoản <span style={{ fontWeight: "bold" }}>{selectedAccount.username}</span>?</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="danger" onClick={handleDelete}>
-                        <FontAwesomeIcon icon={faCheck} /> Đồng ý
-                    </Button>
-                    <Button variant="secondary" onClick={handleCloseDelete}>
-                        <FontAwesomeIcon icon={faTimes} /> Hủy bỏ
-                    </Button>
-                </Modal.Footer>
-            </Modal>
+            
+            <Footer />
         </>
     );
 }
