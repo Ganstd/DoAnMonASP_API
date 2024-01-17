@@ -23,11 +23,14 @@ namespace API_FastFood.Controllers
 
         // GET: api/Carts
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Cart>>> GetCart()
+        //public async Task<ActionResult<IEnumerable<Cart>>> GetCart(string userid)
+        //{
+        //    return await _context.Carts.Where(c => c.UserId== userid).ToListAsync();
+        //}
+        public async Task<ActionResult<IEnumerable<Cart>>> GetCart(string userid)
         {
             return await _context.Carts.ToListAsync();
         }
-
         // GET: api/Carts/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Cart>> GetCart(int id)

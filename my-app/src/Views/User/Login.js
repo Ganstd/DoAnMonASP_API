@@ -6,18 +6,25 @@ import { faFacebookF, faGithub, faGooglePlusG, faLinkedinIn } from "@fortawesome
 
 
 const Login = () => {
-    const [account, setAccount] = useState({ username: "dhphuoc", password: "Dhphuoc@123" });
-
-    const handleChange = (e) => {
-        setAccount(prev => ({ ...prev, [e.target.name]: e.target.value }));
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        axiosClient.post(`/Users/login`, account)
-            .then(res => localStorage.setItem("jwt", res.data.token));
-    }
-
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+   
+    const handleSubmit = async event => {
+        event.preventDefault();
+    
+        try {
+        const response = await axiosClient.post('/Users/login', { username, password });
+        if (response.data.token) {
+            localStorage.setItem('jwt', response.data.token);
+            // Redirect to user profile page
+            window.location.href = '/';
+        } else {
+            alert('Invalid username or password');
+        }
+        } catch (error) {
+        console.error('Failed to log in', error);
+        }
+    };
     return (
         <>
             <div style={{width:"80%",borderRadius:"30px",background:"#b3e6ff",margin:"auto",marginTop:"100px",display:"flex",boxShadow:"20px 20px 20px  #999999"}}>
@@ -40,18 +47,18 @@ const Login = () => {
                         </button>
                     </div>
                     <div >
-                        <Form >
+                        <Form  onSubmit={handleSubmit}>
                             <Form.Group style={{margin:"auto",width:"80%",marginTop:"20px"}}>
-                                <Form.Control type="text" name="username" placeholder="Username" onChange={handleChange} />
+                                <Form.Control type="text" name="username" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)} />
                             </Form.Group>
                             <Form.Group style={{margin:"auto",width:"80%",marginTop:"20px"}}>
-                                <Form.Control type="password" name="password" placeholder="Password" onChange={handleChange} />
+                                <Form.Control type="password" name="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
                             </Form.Group>
                             <div style={{textAlign:"center",marginTop:"20px"}}>
                                 <p style={{margin:"0px"}}><a href="/register" style={{textDecoration: "none",margin: "auto",color: "#000000"}}>Forget Your Password ?</a></p>
                             </div>
                             <div style={{textAlign:"center"}}>
-                                <button style={{width:"150px",height:"40px",margin:"20px",borderRadius:"10px",border:"none",background:"#fff"}} onChange={handleChange}>Sign In</button>
+                                <button style={{width:"150px",height:"40px",margin:"20px",borderRadius:"10px",border:"none",background:"#fff"}} type="submit">Sign In</button>
                             </div>
                         </Form>
                     </div>

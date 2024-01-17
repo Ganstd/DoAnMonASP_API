@@ -10,7 +10,7 @@ const AdminNavbar = () => {
             <div style={{ width: "80%" }}>
                 <h3 style={{textAlign:"center",margin:"10px"}}>Quản lý</h3>
                 <div style={{display: "flex",width: "100%"}} class="menu">
-                    <a href="/admin/products/productList" style={{ textDecoration: "none",margin: "auto",color: "#000000"}}><p style={{margin:"0"}}> sản phẩm</p></a> <hr style={{width:"1px",height:"25px",backgroundColor:"#000000",margin:"0"}}/>
+                    <a href="/admin/product/productList" style={{ textDecoration: "none",margin: "auto",color: "#000000"}}><p style={{margin:"0"}}> sản phẩm</p></a> <hr style={{width:"1px",height:"25px",backgroundColor:"#000000",margin:"0"}}/>
                     <a href="/" style={{ textDecoration: "none",margin: "auto",color: "#000000"}}><p style={{margin:"0"}}> phân loại sản phẩm</p></a><hr style={{width:"1px",height:"25px",backgroundColor:"#000000",margin:"0"}}/>
                     <a href="/" style={{ textDecoration: "none",margin: "auto",color: "#000000"}}><p style={{margin:"0"}}> đơn hàng</p></a><hr style={{width:"1px",height:"25px",backgroundColor:"#000000",margin:"0"}}/>
                     <a href="/Admin/Account/AccountList" style={{ textDecoration: "none",margin: "auto",color: "#000000"}}><p style={{margin:"0"}}> tài khoản</p></a><hr style={{width:"1px",height:"25px",backgroundColor:"#000000",margin:"0"}}/>

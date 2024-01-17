@@ -12,6 +12,9 @@ import IntroducingNewDishes from './Views/User/IntroducingNewDishes';
 import ProductList from './Views/Admin/Product/ProductList';
 import ProductAdd from './Views/Admin/Product/ProductAdd';
 import ProductDetail from './Views/Admin/Product/ProductDetail';
+import Productpromotional from './Views/Admin/Product/Productpromotional';
+import Combo from './Views/Admin/comboes/combo';
+
 
 
 const App = () => {
@@ -36,17 +39,17 @@ const App = () => {
           </Route>
 
           <Route path="/admin" >
-            <Route path="products/productList" element={<ProductList />} />
+            <Route path="product/promotional" element={<Productpromotional />} />
+            <Route path="product/productList" element={<ProductList />} />
             <Route path="product/Detail" element={<ProductDetail />} />
             <Route path="product/add" element={<ProductAdd />} />
             <Route path="accounts" element={<AccountList />} />
             {/* <Route path="details/:id" element={<AccountDetail />} /> */}
             <Route path="accounts/add" element={<AccountAdd />} />
             <Route path="accounts/edit/:id" element={<AccountEdit />} />
-           
+            <Route path="comboes/combo" element={<Combo />} />
 
           </Route>
-
         </Routes>
       </BrowserRouter>
     </>

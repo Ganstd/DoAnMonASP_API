@@ -1,4 +1,4 @@
-import { faCheck, faEdit, faHamburger, faPlus, faTimes, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faEdit, faHamburger, faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -14,11 +14,14 @@ const ProductList = () => {
     const [show, setShow] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState({});
     const handleShow = (id) => {
-        setSelectedProduct(products.find(p => p.id == id));
+        setSelectedProduct(products.find((p) => p.id === id));
         setShow(true);
     }
     const handleClose = () => setShow(false);
-
+    useEffect(() => {
+        axios.get(`https://localhost:7104/api/Products`)
+            .then(res => setProducts(res.data));
+    }, []);
     // Xử lý Modal xóa tài khoản
     const [showDelete, setShowDelete] = useState(false);
     const handleShowDelete = (id) => {
@@ -27,10 +30,7 @@ const ProductList = () => {
     }
     const handleCloseDelete = () => setShowDelete(false);
 
-    useEffect(() => {
-        axios.get(`https://localhost:7104/api/Products`)
-            .then(res => setProducts(res.data));
-    }, []);
+   
 
     const handleDelete = () => {
         axios.delete(`https://localhost:7104/api/Products/${selectedProduct.id}`);
@@ -69,11 +69,7 @@ const ProductList = () => {
                             <tr className="align-middle">
                                  <td style={{textAlign:"center",verticalAlign: "middle"}}>{i++}</td>
                                 {
-                                <td style={{textAlign:"center",verticalAlign: "middle"}}>{item.productTypeId ==2 ?(<img src={`/assets/img/food/${item.image}`} style={{ width: "100%" }}/>):(item.productTypeId ==3 ?(<img src={`/assets/img/accompanying/${item.image}`} style={{ width: "100%" }}/>):(<img src={`/assets/img/water/${item.image}`} style={{ width: "100%" }}/>))}
-                                    
-                                        
-                                       
-                                      
+                                <td style={{textAlign:"center",verticalAlign: "middle"}}>{item.productTypeId ==1 ?(<img src={`/assets/img/food/${item.image}`} style={{ width:"100%"}}/>):(item.productTypeId ==2 ?(<img src={`/assets/img/accompanying/${item.image}`} style={{ width: "100%" }}/>):(<img src={`/assets/img/water/${item.image}`} style={{ width: "100%" }}/>))}
                                 </td>
                                  }
                                 <td style={{textAlign:"center",verticalAlign: "middle"}}>{item.name}</td>
@@ -81,7 +77,7 @@ const ProductList = () => {
                                 <td style={{textAlign:"center",verticalAlign: "middle"}}>{item.description.length < 1 ?(<p style={{margin:"0"}}>không có mô tả</p>):(<p style={{margin:"0"}}>{item.description}</p>)}</td>
                                 <td style={{textAlign:"center",verticalAlign: "middle"}}>{item.productTypeId ==2 ?(<p>food</p>):(item.productTypeId ==1 ?(<p>waret</p>):(<p>accompanying</p>))}</td>
                                 <td style={{textAlign:"center",verticalAlign: "middle"}}>{item.averageStar}</td>
-                                <td style={{textAlign:"center",verticalAlign: "middle"}}>{item.status.toString() == true ?(<p>Không Hoạt động</p>):(<p>Hoạt động</p>)}</td>
+                                <td style={{textAlign:"center",verticalAlign: "middle"}}>{item.status == 1 ?(<p>Hoạt động</p>):(<p>Không Hoạt động</p>)}</td>
                                 <td style={{textAlign:"center",verticalAlign: "middle"}}>
                                     <Button variant="info" style={{ margin: "5px" }} onClick={() => handleShow(item.id)}>
                                         <FontAwesomeIcon icon={faHamburger} />
@@ -90,7 +86,8 @@ const ProductList = () => {
                                         <FontAwesomeIcon icon={faEdit} />
                                     </Link>
                                     <Button variant="danger" onClick={() => handleShowDelete(item.id)}>
-                                        <FontAwesomeIcon icon={faTrash} />
+                                        {/* <FontAwesomeIcon icon={faTrash} /> */}
+                                        <img src="/assets/icon/system-solid-39-trash.gif" style={{width:"20px"}}></img>
                                     </Button>
                                 </td>
                             </tr>
@@ -106,32 +103,31 @@ const ProductList = () => {
                 <Modal.Body>
                     
                     <Row>
-                       
-                        {/* <Col md={4}>
-                            <img src={`https://localhost:7248/images/avatar/${selectedProduct.avatar}`} style={{ width: "100%" }} />
-                        </Col> */}
+                         <Col md={4}>
+                            {selectedProduct.productTypeId ==2 ?(<img src={`/assets/img/food/${selectedProduct.image}`} style={{ width: "100%" }}/>):(selectedProduct.productTypeId ==3 ?(<img src={`/assets/img/accompanying/${selectedProduct.image}`} style={{ width: "100%" }}/>):(<img src={`/assets/img/water/${selectedProduct.image}`} style={{ width: "100%" }}/>))}
+                        </Col> 
                         <Col md={4}>
                             <dl>
                                 <dt>Tên sản phẩm:</dt>
-                                <dd>{selectedProduct.Name}</dd>
+                                <dd>{selectedProduct.name}</dd>
 
                                 <dt>Giá:</dt>
-                                <dd>{selectedProduct.Price}</dd>
+                                <dd>{selectedProduct.price}.000 VND</dd>
 
                                 <dt>Mô tả:</dt>
-                                <dd>{selectedProduct.Description}</dd>
+                                <dd>{selectedProduct && selectedProduct.description ? (<p style={{ margin: "0" }}>{selectedProduct.description}</p>) : (<p style={{ margin: "0" }}>không có mô tả</p>)}</dd>
                             </dl>
                         </Col>
                         <Col md={4}>
                             <dl>
                                 <dt>Loại sản phẩm:</dt>
-                                <dd>{selectedProduct.ProductTypedId}</dd>
+                                <dd>{selectedProduct.productTypedId==2 ?(<p>food</p>):(selectedProduct.productTypeId ==1 ?(<p>waret</p>):(<p>accompanying</p>))}</dd>
 
                                 <dt>Đánh giá:</dt>
-                                <dd>{selectedProduct.AverageStar}</dd>
+                                <dd>{selectedProduct.averageStar}/5</dd>
 
                                 <dt>Trạng thái:</dt>
-                                <dd>{selectedProduct.status}</dd>
+                                <dd>{selectedProduct.status == 1 ?(<p>Hoạt động</p>):(<p>Không Hoạt động</p>)}</dd>
                             </dl>
                         </Col>
                         
