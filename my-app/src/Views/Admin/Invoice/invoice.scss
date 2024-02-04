@@ -1,0 +1,16 @@
+.invoice{
+    display: flex;
+    
+        .invoiceContainer {
+            flex: 6;
+    
+            .table {
+                    text-align: center;
+                    
+                }
+            
+                .pagination {
+                    justify-content: center;
+                }
+        }
+}

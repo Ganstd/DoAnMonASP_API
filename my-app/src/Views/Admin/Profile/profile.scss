@@ -1,0 +1,20 @@
+.profile{
+    display: flex;
+
+    .profileContainer{
+        flex: 6;
+
+
+        
+    }
+}
+
+.changepassword {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}

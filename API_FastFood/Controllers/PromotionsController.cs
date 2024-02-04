@@ -28,6 +28,26 @@ namespace API_FastFood.Controllers
             return await _context.Promotions.ToListAsync();
         }
 
+        // GET: api/Promotion/page=?
+        [HttpGet("page")]
+
+        public async Task<ActionResult<IEnumerable<Promotion>>> GetWishlistPage(int page)
+        {
+            const int pageSize = 5;
+            if (_context.Promotions == null)
+            {
+                return NotFound();
+            }
+
+            return await _context.Promotions
+                                 .Include(i => i.ProductType)
+                                 .Include(i => i.Product)
+                                 .Include(i => i.Invoice)
+                                 .Skip((page - 1) * pageSize)
+                                 .Take(pageSize)
+                                 .ToListAsync();
+        }
+
         // GET: api/Promotions/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Promotion>> GetPromotion(int id)

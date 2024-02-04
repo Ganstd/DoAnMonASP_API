@@ -28,6 +28,26 @@ namespace API_FastFood.Controllers
             return await _context.Ratings.ToListAsync();
         }
 
+        // GET: api/Rating/page=?
+        [HttpGet("page")]
+
+        public async Task<ActionResult<IEnumerable<Rating>>> GetRatingPage(int page)
+        {
+            const int pageSize = 5;
+            if (_context.Ratings == null)
+            {
+                return NotFound();
+            }
+
+            return await _context.Ratings
+                                 .Include(i => i.User)
+                                 .Include(i => i.Product)
+                                 .Include(i => i.Combo)
+                                 .Skip((page - 1) * pageSize)
+                                 .Take(pageSize)
+                                 .ToListAsync();
+        }
+
         // GET: api/Ratings/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Rating>> GetRating(int id)

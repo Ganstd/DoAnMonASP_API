@@ -1,69 +1,92 @@
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from "axios";
-import { useState } from "react";
-import { Button, Form } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const ProductAdd = () => {
-    const navigate = useNavigate();
+  var navigate = useNavigate();
 
-    const [account, setAccount] = useState({ isAdmin: false, avatar: "customer.jpg", status: true });
+ const [product, setProduct] = useState({
+    name: '',
+    price: 0,
+    description: '',
+    imageFile: null,
+    productTypeId: 0,
+    averageStar: 0,
+    status: true,
+ });
 
-    const handleChange = (e) => {
-        let name = e.target.name;
-        let value = e.target.value;
-        setAccount(prev => ({ ...prev, [name]: value }));
+ const handleInputChange = (event) => {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    setProduct({ ...product, [name]: value });
+ };
+
+ const handleFileUpload = (event) => {
+    setProduct({ ...product, imageFile: event.target.files[0] });
+ };
+
+ const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    let formData = new FormData();
+    formData.append('name', product.name);
+    formData.append('price', product.price);
+    formData.append('description', product.description);
+    formData.append('imageFile', product.imageFile);
+    formData.append('productTypeId', product.productTypeId);
+    formData.append('status', product.status);
+
+    try {
+      const response = await axios.post('https://localhost:7104/api/Products', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+
+      }).then(() => navigate('/admin/products'));
+
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
     }
+ };
 
-    const handleCheck = (e) => {
-        let name = e.target.name;
-        let value = e.target.checked;
-        setAccount(prev => ({ ...prev, [name]: value }));
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        axios.post(`https://localhost:7248/api/Accounts`, account)
-            .then(() => navigate('/accounts'));
-    }
-
-    return (
-        <>
-            <Form className="col-md-3">
-                <Form.Group className="mb-3">
-                    <Form.Label>Tên sản phẩm:</Form.Label>
-                    <Form.Control type="text" name="Tên sản phẩm" onChange={handleChange} />
-                </Form.Group>
-                <Form.Group className="mb-3">
-                    <Form.Label>Giá:</Form.Label>
-                    <Form.Control type="number" name="giá" onChange={handleChange} />
-                </Form.Group>
-                <Form.Group className="mb-3">
-                <Form.Label>Mô tả:</Form.Label>
-                    <Form.Control type="text" name="Mô tả" onChange={handleChange} />
-                </Form.Group>
-                <Form.Group className="mb-3">
-                    <Form.Label>Loại sản phẩm:</Form.Label>
-                    <Form.Control type="number" name="Loại sản phẩm" onChange={handleChange} />
-                </Form.Group>
-                <Form.Group className="mb-3">
-                    <Form.Label>Trạng thái:</Form.Label>
-                    <Form.Control type="number" name="Trạng thái" value={1}  onChange={handleChange} />
-                </Form.Group>
-                <Form.Group className="mb-3">
-                    <Form.Label>Ảnh sản phẩm:</Form.Label>
-                    <Form.Control type="file" />
-                </Form.Group>
-                <Form.Group className="mb-3">
-                    <Form.Check type="switch" label="Còn hoạt động" name="status" onChange={handleCheck} />
-                </Form.Group>
-                <Button type="submit" variant="success" onClick={handleSubmit}>
-                    <FontAwesomeIcon icon={faPlus} /> Thêm
-                </Button>
-            </Form>
-        </>
-    );
-}
+ return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Name:
+          <input type="text" name="name" onChange={handleInputChange} />
+        </label>
+        <label>
+          Price:
+          <input type="number" name="price" onChange={handleInputChange} />
+        </label>
+        <label>
+          Description:
+          <textarea name="description" onChange={handleInputChange} />
+        </label>
+        <label>
+          Image File:
+          <input type="file" onChange={handleFileUpload} />
+        </label>
+        <label>
+          Product Type ID:
+          <input type="number" name="productTypeId" onChange={handleInputChange} />
+             </label>
+             <label>
+            Average Star:
+            <input type="number"  min="0" max="5" name="averageStar" onChange={handleInputChange} />
+            </label>
+        <label>
+          Status:
+          <input type="checkbox" name="status" disabled checked={product.status} onChange={handleInputChange} />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+ );
+};
 
 export default ProductAdd;

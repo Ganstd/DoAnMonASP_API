@@ -28,6 +28,25 @@ namespace API_FastFood.Controllers
             return await _context.Comments.ToListAsync();
         }
 
+        // GET: api/Comment/page=?
+        [HttpGet("page")]
+
+        public async Task<ActionResult<IEnumerable<Comment>>> GetCommentPage(int page)
+        {
+            const int pageSize = 5;
+            if (_context.Comments == null)
+            {
+                return NotFound();
+            }
+
+            return await _context.Comments
+                                 .Include(i => i.User)
+                                 .Include(i => i.Product)
+                                 .Include(i => i.Combo)
+                                 .Skip((page - 1) * pageSize)
+                                 .Take(pageSize)
+                                 .ToListAsync();
+        }
         // GET: api/Comments/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Comment>> GetComment(int id)

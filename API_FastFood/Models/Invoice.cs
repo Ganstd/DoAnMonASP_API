@@ -33,12 +33,12 @@ namespace API_FastFood.Models
         public bool PaymentType { get; set; }
 
         [DefaultValue(true)]
-        public bool Status { get; set; }
+        public int Status { get; set; }
 
         public Invoice()
         {
             Total = 0;
-            Status = true;
+            Status = 1;
             PaymentType = true;
         }
     }

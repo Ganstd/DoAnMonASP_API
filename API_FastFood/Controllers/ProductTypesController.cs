@@ -28,6 +28,22 @@ namespace API_FastFood.Controllers
             return await _context.ProductTypes.ToListAsync();
         }
 
+        // GET: api/ProductType/page=?
+        [HttpGet("page")]
+
+        public async Task<ActionResult<IEnumerable<ProductType>>> GetProductTypePage(int page)
+        {
+            const int pageSize = 6;
+            if (_context.ProductTypes == null)
+            {
+                return NotFound();
+            }
+
+            return await _context.ProductTypes
+                                        .Skip((page - 1) * pageSize)
+                                        .Take(pageSize)
+                                        .ToListAsync();
+        }
         // GET: api/ProductTypes/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ProductType>> GetProductType(int id)

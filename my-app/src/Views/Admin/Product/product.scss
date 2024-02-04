@@ -1,0 +1,20 @@
+.product{
+    display: flex;
+
+    .productContainer{
+        flex: 6;
+        
+
+        .table{
+            text-align: center;
+        }
+        .pagination{
+            justify-content: center;
+        }
+
+        .image {
+            height: 8%;
+            width: 8%;
+        }
+    }
+}

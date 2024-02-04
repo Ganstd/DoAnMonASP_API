@@ -1,0 +1,17 @@
+.promotion{
+    display: flex;
+
+    .promotionContainer{
+        flex: 6;
+
+
+        .table {
+                text-align: center;
+        
+            }
+        
+            .pagination {
+                justify-content: center;
+            }
+    }
+}

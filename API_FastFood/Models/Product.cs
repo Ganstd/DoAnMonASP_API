@@ -17,13 +17,15 @@ namespace API_FastFood.Models
         public string Name { get; set; }
 
         public string Image { get; set; }
+        [NotMapped]
+        public IFormFile ImageFile { get; set; }
 
         [DefaultValue(0)]
         public int Price { get; set; }
 
         public string Description { get; set; }
 
-        public int ProductTypeId { get; set; }
+        public int? ProductTypeId { get; set; }
 
         // Reference navigation property cho khóa ngoại đến ProductType
         public ProductType ProductType { get; set; }

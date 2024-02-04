@@ -25,11 +25,31 @@ namespace API_FastFood.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Invoice>>> GetInvoice()
         {
-            return await _context.Invoices.ToListAsync();
+            return await _context.Invoices.Include(a => a.User)
+                                        .ToListAsync();
+        }
+
+        // GET: api/Invoices/page=?
+        [HttpGet("page")]
+
+        public async Task<ActionResult<IEnumerable<Invoice>>> GetInvoicePage(int page)
+        {
+            const int pageSize = 5;
+            if (_context.Invoices == null)
+            {
+                return NotFound();
+            }
+
+            return await _context.Invoices
+                                 .Include(i => i.User)
+                                 .Skip((page - 1) * pageSize)
+                                 .Take(pageSize)
+                                 .ToListAsync();
         }
 
         // GET: api/Invoices/5
         [HttpGet("{id}")]
+
         public async Task<ActionResult<Invoice>> GetInvoice(int id)
         {
             var invoice = await _context.Invoices.FindAsync(id);
@@ -44,14 +64,16 @@ namespace API_FastFood.Controllers
 
         // PUT: api/Invoices/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // sua trang thai
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutInvoice(int id, Invoice invoice)
+        public async Task<IActionResult> PutInvoice(int id, int status)
         {
+            var invoice = _context.Invoices.FirstOrDefault(i => i.Id == id);
             if (id != invoice.Id)
             {
                 return BadRequest();
             }
-
+            invoice.Status = status;
             _context.Entry(invoice).State = EntityState.Modified;
 
             try

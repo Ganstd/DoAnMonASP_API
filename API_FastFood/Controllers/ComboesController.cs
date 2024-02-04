@@ -28,6 +28,23 @@ namespace API_FastFood.Controllers
             return await _context.Combos.ToListAsync();
         }
 
+        // GET: api/Invoices/page=?
+        [HttpGet("page")]
+
+        public async Task<ActionResult<IEnumerable<Combo>>> GetComboPage(int page)
+        {
+            const int pageSize = 5;
+            if (_context.Combos == null)
+            {
+                return NotFound();
+            }
+
+            return await _context.Combos
+                                 .Skip((page - 1) * pageSize)
+                                 .Take(pageSize)
+                                 .ToListAsync();
+        }
+
         // GET: api/Comboes/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Combo>> GetCombo(int id)

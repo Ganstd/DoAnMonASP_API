@@ -1,15 +1,22 @@
-import { faCheck, faEdit, faHamburger, faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faEdit, faHamburger, faPlus, faTimes, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Button, Col, Modal, Row, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import AdminNavbar from "../../../Layout/Navabaradmin";
+import  "./product.scss";
+import Sidebar from '../components/sidebar/Sidebar';
+import Navbar from '../components/navbar/Navbar';
+import Pagination from 'react-bootstrap/Pagination';
 
 const ProductList = () => {
     const [products, setProducts] = useState([]);
-    var i = 1;
+    const [page, setPage] = useState(1);
+    let totalProducts = 90; // Total number of products
+    let pageSize = 5; // Number of products per page
 
+    let totalPages = Math.ceil(totalProducts / pageSize); // Calculate total number
+    
     // Xử lý Modal thông tin tài khoản
     const [show, setShow] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState({});
@@ -18,10 +25,12 @@ const ProductList = () => {
         setShow(true);
     }
     const handleClose = () => setShow(false);
+
     useEffect(() => {
-        axios.get(`https://localhost:7104/api/Products`)
+        axios.get(`https://localhost:7104/api/Products/page?page=${page}`)
             .then(res => setProducts(res.data));
-    }, []);
+    }, [page]);
+
     // Xử lý Modal xóa tài khoản
     const [showDelete, setShowDelete] = useState(false);
     const handleShowDelete = (id) => {
@@ -44,57 +53,76 @@ const ProductList = () => {
     
     return (
         <>
-            <AdminNavbar/>
-            <Link to="/admin/product/add" className="btn btn-success mb-2" >
+             <div className="product">
+          <Sidebar />
+      <div className="productContainer">
+        <Navbar />
+           
+            <Link to="/admin/products/add" className="btn btn-success mb-2" >
                 <FontAwesomeIcon icon={faPlus} /> Thêm
             </Link>
 
-            <Table>
+                    <Table className="table">
                 <thead className="table-dark">
                     <tr>
-                        <th style={{width:"5%",textAlign:"center"}}>STT</th>
-                        <th style={{width:"11%",textAlign:"center"}}>Hình ảnh</th>
-                        <th style={{width:"11%",textAlign:"center"}}>Tên sản phẩm</th>
-                        <th style={{width:"10%",textAlign:"center"}}>Giá</th>
-                        <th style={{width:"22%",textAlign:"center"}}>Mô tả</th>
-                        <th style={{width:"11%",textAlign:"center"}}>Loại sản phẩm</th>
-                        <th style={{width:"10%",textAlign:"center"}}>Đánh giá</th>
-                        <th style={{width:"10%",textAlign:"center"}}>Trạng thái</th>
-                        <th style={{width:"10%",textAlign:"center"}}>Chức năng</th>
+                        <th >ID</th>
+                        <th className="image">Hình ảnh</th>
+                        <th >Tên sản phẩm</th>
+                        <th >Giá</th>
+                        <th >Mô tả</th>
+                        <th >Loại sản phẩm</th>
+                        <th >Đánh giá</th>
+                        <th >Trạng thái</th>
+                        <th >Thao tác</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
                         products.map(item =>
-                            <tr className="align-middle">
-                                 <td style={{textAlign:"center",verticalAlign: "middle"}}>{i++}</td>
+                            <tr>
+                                 <td>{item.id}</td>
                                 {
-                                <td style={{textAlign:"center",verticalAlign: "middle"}}>{item.productTypeId ==1 ?(<img src={`/assets/img/food/${item.image}`} style={{ width:"100%"}}/>):(item.productTypeId ==2 ?(<img src={`/assets/img/accompanying/${item.image}`} style={{ width: "100%" }}/>):(<img src={`/assets/img/water/${item.image}`} style={{ width: "100%" }}/>))}
-                                </td>
+                                    <td >
+                                        {item.productType.id === 1 ? (<img src={`https://localhost:7104/assets/img/food/${item.image}`} alt={item.title} style={{ width: "100%" }} />) : (item.productType.id === 2 ? (<img src={`https://localhost:7104/assets/img/accompanying/${item.image}`} alt={item.title} style={{ width: "100%" }} />) : (<img src={`https://localhost:7104/assets/img/water/${item.image}`} alt={item.title} style={{ width: "100%" }} />))}
+                                    </td>
                                  }
-                                <td style={{textAlign:"center",verticalAlign: "middle"}}>{item.name}</td>
-                                <td style={{textAlign:"center",verticalAlign: "middle"}}>{item.price}.000 VND</td>
-                                <td style={{textAlign:"center",verticalAlign: "middle"}}>{item.description.length < 1 ?(<p style={{margin:"0"}}>không có mô tả</p>):(<p style={{margin:"0"}}>{item.description}</p>)}</td>
-                                <td style={{textAlign:"center",verticalAlign: "middle"}}>{item.productTypeId ==2 ?(<p>food</p>):(item.productTypeId ==1 ?(<p>waret</p>):(<p>accompanying</p>))}</td>
-                                <td style={{textAlign:"center",verticalAlign: "middle"}}>{item.averageStar}</td>
-                                <td style={{textAlign:"center",verticalAlign: "middle"}}>{item.status == 1 ?(<p>Hoạt động</p>):(<p>Không Hoạt động</p>)}</td>
-                                <td style={{textAlign:"center",verticalAlign: "middle"}}>
+                                <td >{item.name}</td>
+                                <td >{item.price}.000 VND</td>
+                                <td >{item.description}</td>
+                                <td >{item.productType.name}</td>
+                                <td >{item.averageStar}</td>
+                                <td >{item.status == 1 ? 'Còn hàng' : 'Hết hàng' }</td>
+                                <td >
                                     <Button variant="info" style={{ margin: "5px" }} onClick={() => handleShow(item.id)}>
                                         <FontAwesomeIcon icon={faHamburger} />
                                     </Button>
-                                    <Link to={`/admin/accounts/edit/${item.id}`} className="btn btn-warning" style={{ margin: "5px" }}>
+                                    <Link to={`/admin/products/edit/${item.id}`} className="btn btn-warning" style={{ margin: "5px" }}>
                                         <FontAwesomeIcon icon={faEdit} />
                                     </Link>
                                     <Button variant="danger" onClick={() => handleShowDelete(item.id)}>
-                                        {/* <FontAwesomeIcon icon={faTrash} /> */}
-                                        <img src="/assets/icon/system-solid-39-trash.gif" style={{width:"20px"}}></img>
+                                         <FontAwesomeIcon icon={faTrash} /> 
                                     </Button>
                                 </td>
                             </tr>
                         )
                     }
                 </tbody>
-            </Table>
+                    </Table>
+                    
+
+
+                     <Pagination className="pagination">
+                        <Pagination.First onClick={() => setPage(1)} disabled={page === 1}/>
+                        <Pagination.Prev onClick={() => setPage(page - 1)} disabled={page === 1}/>                       
+                        <Pagination.Item onClick={() => setPage(page - 1)} disabled={page < 2}>{page - 1}</Pagination.Item>
+                        
+                        <Pagination.Item onClick={() => setPage(page)}   > { page }</Pagination.Item>
+                                       
+                        <Pagination.Item onClick={() => setPage(page + 1)} disabled={page >= totalPages} > {page + 1} </Pagination.Item>
+                        <Pagination.Next onClick={() => setPage(page + 1)} disabled={page >= totalPages}/>
+                        <Pagination.Last onClick={() => setPage(totalPages)} disabled={page === totalPages}/>
+                    </Pagination>
+
 
             <Modal show={show} size="lg" onHide={handleClose} centered>
                 <Modal.Header closeButton>
@@ -127,7 +155,7 @@ const ProductList = () => {
                                 <dd>{selectedProduct.averageStar}/5</dd>
 
                                 <dt>Trạng thái:</dt>
-                                <dd>{selectedProduct.status == 1 ?(<p>Hoạt động</p>):(<p>Không Hoạt động</p>)}</dd>
+                                <dd>{selectedProduct.status == 1 ?(<p>Còn hàng</p>):(<p>Hết hàng</p>)}</dd>
                             </dl>
                         </Col>
                         
@@ -144,7 +172,7 @@ const ProductList = () => {
                 <Modal.Header closeButton>
                     <Modal.Title>Xác nhận xóa</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Bạn có chắc muốn xóa sản phẩm <span style={{ fontWeight: "bold" }}>{selectedProduct.Name}</span>?</Modal.Body>
+                <Modal.Body>Bạn có chắc muốn xóa sản phẩm <span style={{ fontWeight: "bold" }}>{selectedProduct.name}</span>?</Modal.Body>
                 <Modal.Footer>
                     <Button variant="danger" onClick={handleDelete}>
                         <FontAwesomeIcon icon={faCheck} /> Đồng ý
@@ -153,7 +181,9 @@ const ProductList = () => {
                         <FontAwesomeIcon icon={faTimes} /> Hủy bỏ
                     </Button>
                 </Modal.Footer>
-            </Modal>
+                    </Modal>
+                </div>
+                </div>
         </>
     );
 }

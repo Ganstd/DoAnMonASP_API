@@ -30,16 +30,18 @@ namespace API_FastFood.Controllers
 
         // GET: api/InvoiceDetails/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<InvoiceDetail>> GetInvoiceDetail(int id)
+        public async Task<ActionResult<IEnumerable<InvoiceDetail>>> GetInvoiceDetails(int id)
         {
-            var invoiceDetail = await _context.InvoiceDetails.FindAsync(id);
+            var invoiceDetails = await _context.InvoiceDetails
+                .Where(d => d.InvoiceId == id)
+                .ToListAsync();
 
-            if (invoiceDetail == null)
+            if (invoiceDetails == null)
             {
                 return NotFound();
             }
 
-            return invoiceDetail;
+            return invoiceDetails;
         }
 
         // PUT: api/InvoiceDetails/5

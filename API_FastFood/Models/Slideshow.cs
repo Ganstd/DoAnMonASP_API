@@ -15,15 +15,10 @@ namespace API_FastFood.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string Image { get; set; }
-        public int? ProductId { get; set; }
 
-        // Reference navigation property cho khóa ngoại đến Product
-        public Product Product { get; set; }
-
-        public int? ComboId { get; set; }
-
-        // Reference navigation property cho khóa ngoại đến Combo
-        public Combo Combo { get; set; }
+        [NotMapped]
+        public IFormFile ImageFile { get; set; }
+        public string Url { get; set; }
         public bool Status { get; set; }
 
         public Slideshow()
